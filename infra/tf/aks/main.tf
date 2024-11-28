@@ -3,6 +3,8 @@
 
 provider "azurerm" {
   features {}
+  subscription_id                 = "7342d69a-27b2-4574-b75c-4cf5895037e2"
+  resource_provider_registrations = "none"
 }
 
 resource "azurerm_resource_group" "example" {
@@ -38,8 +40,8 @@ resource "azurerm_kubernetes_cluster" "example" {
 
   default_node_pool {
     name       = "default"
-    node_count = 1
-    vm_size    = "Standard_DS2_v2"
+    node_count = 2
+    vm_size    = "standard_b2pls_v2"
   }
 
   identity {
